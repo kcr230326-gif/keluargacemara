@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Keluarga Cemara Residence</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+scroll-behavior:smooth;
+}
+
+body{
+font-family:'Inter',sans-serif;
+background:#0b0f1c;
+color:#f1f1f1;
+overflow-x:hidden;
+}
+
+/* NAVBAR */
+nav{
+position:fixed;
+top:0;
+width:100%;
+padding:20px 8%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+background:rgba(10,15,28,0.6);
+backdrop-filter:blur(10px);
+z-index:1000;
+}
+
+nav a{
+color:#f1f1f1;
+text-decoration:none;
+margin-left:30px;
+font-size:14px;
+letter-spacing:1px;
+}
+
+.logo{
+font-family:'Playfair Display',serif;
+font-size:20px;
+color:#c8a24c;
+}
+
+/* HERO */
+.hero{
+height:100vh;
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+background:
+linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.8)),
+url('LookUp.jpg') center/cover no-repeat;
+}
+
+.hero h1{
+font-family:'Playfair Display',serif;
+font-size:64px;
+}
+
+.hero p{
+margin-top:20px;
+color:#9ca3af;
+font-size:18px;
+}
+
+.cta{
+margin-top:40px;
+padding:16px 45px;
+border:1px solid #c8a24c;
+color:#c8a24c;
+text-decoration:none;
+transition:0.4s;
+}
+
+.cta:hover{
+background:#c8a24c;
+color:#0b0f1c;
+}
+
+/* SECTION */
+section{
+padding:140px 8%;
+}
+
+.gold{
+color:#c8a24c;
+font-family:'Playfair Display',serif;
+}
+
+.content{
+max-width:900px;
+}
+
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:60px;
+margin-top:80px;
+}
+
+.card img{
+width:100%;
+border-radius:6px;
+transition:0.5s;
+}
+
+.card img:hover{
+transform:scale(1.07);
+}
+
+.card p{
+margin-top:15px;
+color:#9ca3af;
+}
+
+/* MAP */
+.map{
+width:100%;
+height:500px;
+border:0;
+filter:grayscale(100%) contrast(120%);
+margin-top:50px;
+}
+
+/* FOOTER */
+footer{
+padding:80px 8%;
+border-top:1px solid rgba(255,255,255,0.1);
+text-align:center;
+color:#9ca3af;
+}
+
+/* WA FLOAT */
+.wa{
+position:fixed;
+bottom:40px;
+right:40px;
+background:#c8a24c;
+color:#0b0f1c;
+padding:15px 25px;
+border-radius:50px;
+text-decoration:none;
+font-weight:600;
+box-shadow:0 15px 35px rgba(0,0,0,0.4);
+transition:0.4s;
+}
+
+.wa:hover{
+transform:translateY(-5px);
+}
+
+/* ANIMATION */
+.fade{
+opacity:0;
+transform:translateY(60px);
+transition:1s ease;
+}
+
+.fade.show{
+opacity:1;
+transform:translateY(0);
+}
+
+</style>
+</head>
+
+<body>
+
+<nav>
+<div class="logo">Keluarga Cemara</div>
+<div>
+<a href="#tentang">Tentang</a>
+<a href="#progress">Progress</a>
+<a href="#lokasi">Lokasi</a>
+</div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+<div>
+<h1>Keluarga Cemara Residence</h1>
+<p>Hunian Modern Elegan di Desa Butu, Bone Bolango</p>
+<a href="https://wa.me/6289684247294" class="cta">Konsultasi Eksklusif</a>
+</div>
+</section>
+
+<!-- TENTANG -->
+<section id="tentang">
+<div class="content fade">
+<h2 class="gold">Visi & Komitmen</h2>
+<p style="margin-top:25px;color:#9ca3af;">
+Kami menghadirkan hunian yang tidak hanya nyaman,
+tetapi juga memiliki nilai investasi jangka panjang.
+Dikembangkan dengan standar kualitas dan perencanaan matang.
+</p>
+</div>
+</section>
+
+<!-- PROGRESS -->
+<section id="progress">
+<h2 class="gold fade">Tampilan Dalam</h2>
+
+<div class="grid">
+<div class="card fade">
+<img src="progress1.jpg">
+<p>Halaman Depan</p>
+</div>
+
+<div class="card fade">
+<img src="progress2.jpg">
+<p>Ruang Tengah</p>
+</div>
+
+<div class="card fade">
+<img src="progress3.jpg">
+<p>Kamar Depan</p>
+</div>
+
+<div class="card fade">
+<img src="progress4.jpg">
+<p>Kamar Belakang</p>
+</div>
+
+<div class="card fade">
+<img src="progress5.jpg">
+<p>Kamar Mandi</p>
+</div>
+</div>
+</section>
+
+<!-- LOKASI -->
+<section id="lokasi">
+<h2 class="gold fade">Lokasi Strategis</h2>
+<p style="color:#9ca3af;margin-top:20px;" class="fade">
+Belakang Kampus 4 Bone Bolango, Desa Butu
+</p>
+
+<iframe class="map fade"
+src="https://www.google.com/maps?q=Desa+Butu+Bone+Bolango&output=embed">
+</iframe>
+</section>
+
+<footer>
+© 2026 Keluarga Cemara Residence  
+Hubungi WhatsApp: 089684247294
+</footer>
+
+<a href="https://wa.me/6289684247294" class="wa">
+Chat WhatsApp
+</a>
+
+<script>
+const faders = document.querySelectorAll('.fade');
+window.addEventListener('scroll',()=>{
+faders.forEach(el=>{
+if(el.getBoundingClientRect().top < window.innerHeight - 120){
+el.classList.add('show');
+}
+});
+});
+</script>
+
+</body>
+</html>
