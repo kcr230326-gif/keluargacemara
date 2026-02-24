@@ -1,274 +1,564 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Keluarga Cemara Residence</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Keluarga Cemara Residence - Hunian Nyaman Bone Bolango</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
 
-<style>
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-scroll-behavior:smooth;
-}
+        /* Header & Navigation */
+        header {
+            background: linear-gradient(135deg, #2c5530 0%, #4a7c59 100%);
+            color: white;
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
 
-body{
-font-family:'Inter',sans-serif;
-background:#0b0f1c;
-color:#f1f1f1;
-overflow-x:hidden;
-}
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
 
-/* NAVBAR */
-nav{
-position:fixed;
-top:0;
-width:100%;
-padding:20px 8%;
-display:flex;
-justify-content:space-between;
-align-items:center;
-background:rgba(10,15,28,0.6);
-backdrop-filter:blur(10px);
-z-index:1000;
-}
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
 
-nav a{
-color:#f1f1f1;
-text-decoration:none;
-margin-left:30px;
-font-size:14px;
-letter-spacing:1px;
-}
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
 
-.logo{
-font-family:'Playfair Display',serif;
-font-size:20px;
-color:#c8a24c;
-}
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            transition: opacity 0.3s;
+        }
 
-/* HERO */
-.hero{
-height:100vh;
-display:flex;
-align-items:center;
-justify-content:center;
-text-align:center;
-background:
-linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.8)),
-url('LookUp.jpg') center/cover no-repeat;
-}
+        .nav-links a:hover {
+            opacity: 0.8;
+        }
 
-.hero h1{
-font-family:'Playfair Display',serif;
-font-size:64px;
-}
+        /* Hero Section */
+        .hero {
+            margin-top: 60px;
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
+                        url('LookUp.jpg') center/cover;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+        }
 
-.hero p{
-margin-top:20px;
-color:#9ca3af;
-font-size:18px;
-}
+        .hero-content h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
 
-.cta{
-margin-top:40px;
-padding:16px 45px;
-border:1px solid #c8a24c;
-color:#c8a24c;
-text-decoration:none;
-transition:0.4s;
-}
+        .hero-content p {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+        }
 
-.cta:hover{
-background:#c8a24c;
-color:#0b0f1c;
-}
+        .cta-button {
+            display: inline-block;
+            background: #e74c3c;
+            color: white;
+            padding: 1rem 2.5rem;
+            text-decoration: none;
+            border-radius: 50px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            transition: transform 0.3s, box-shadow 0.3s;
+            animation: pulse 2s infinite;
+        }
 
-/* SECTION */
-section{
-padding:140px 8%;
-}
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
 
-.gold{
-color:#c8a24c;
-font-family:'Playfair Display',serif;
-}
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
 
-.content{
-max-width:900px;
-}
+        /* Promo Banner */
+        .promo-banner {
+            background: linear-gradient(90deg, #e74c3c, #c0392b);
+            color: white;
+            text-align: center;
+            padding: 1.5rem;
+            font-size: 1.3rem;
+            font-weight: bold;
+        }
 
-.grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-gap:60px;
-margin-top:80px;
-}
+        /* Features Section */
+        .features {
+            padding: 5rem 2rem;
+            background: #f8f9fa;
+        }
 
-.card img{
-width:100%;
-border-radius:6px;
-transition:0.5s;
-}
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
 
-.card img:hover{
-transform:scale(1.07);
-}
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: #2c5530;
+        }
 
-.card p{
-margin-top:15px;
-color:#9ca3af;
-}
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
 
-/* MAP */
-.map{
-width:100%;
-height:500px;
-border:0;
-filter:grayscale(100%) contrast(120%);
-margin-top:50px;
-}
+        .feature-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
 
-/* FOOTER */
-footer{
-padding:80px 8%;
-border-top:1px solid rgba(255,255,255,0.1);
-text-align:center;
-color:#9ca3af;
-}
+        .feature-card:hover {
+            transform: translateY(-10px);
+        }
 
-/* WA FLOAT */
-.wa{
-position:fixed;
-bottom:40px;
-right:40px;
-background:#c8a24c;
-color:#0b0f1c;
-padding:15px 25px;
-border-radius:50px;
-text-decoration:none;
-font-weight:600;
-box-shadow:0 15px 35px rgba(0,0,0,0.4);
-transition:0.4s;
-}
+        .feature-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
 
-.wa:hover{
-transform:translateY(-5px);
-}
+        /* Location Section */
+        .location {
+            padding: 5rem 2rem;
+            background: white;
+        }
 
-/* ANIMATION */
-.fade{
-opacity:0;
-transform:translateY(60px);
-transition:1s ease;
-}
+        .location-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
 
-.fade.show{
-opacity:1;
-transform:translateY(0);
-}
+        .location-map {
+            background: #e0e0e0;
+            height: 400px;
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            color: #666;
+        }
 
-</style>
+        .location-info h3 {
+            color: #2c5530;
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .location-info ul {
+            list-style: none;
+            margin-top: 1rem;
+        }
+
+        .location-info li {
+            padding: 0.5rem 0;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        /* Promo Details */
+        .promo-details {
+            padding: 5rem 2rem;
+            background: linear-gradient(135deg, #2c5530 0%, #4a7c59 100%);
+            color: white;
+        }
+
+        .promo-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .promo-card {
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(10px);
+            padding: 2.5rem;
+            border-radius: 20px;
+            text-align: center;
+            border: 2px solid rgba(255,255,255,0.2);
+        }
+
+        .promo-price {
+            font-size: 3rem;
+            font-weight: bold;
+            color: #f1c40f;
+            margin: 1rem 0;
+        }
+
+        /* Gallery */
+        .gallery {
+            padding: 5rem 2rem;
+            background: #f8f9fa;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .gallery-item {
+            height: 250px;
+            background: #ddd;
+            border-radius: 15px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 5rem 2rem;
+            background: white;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .contact-card {
+            background: #f8f9fa;
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+            transition: all 0.3s;
+        }
+
+        .contact-card:hover {
+            background: #2c5530;
+            color: white;
+        }
+
+        .contact-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .contact-card a {
+            color: inherit;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1rem;
+        }
+
+        /* Footer */
+        footer {
+            background: #1a1a1a;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .social-links {
+            margin-top: 1rem;
+        }
+
+        .social-links a {
+            color: white;
+            font-size: 1.5rem;
+            margin: 0 1rem;
+            text-decoration: none;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .hero-content h1 {
+                font-size: 2rem;
+            }
+            
+            .location-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .promo-price {
+                font-size: 2rem;
+            }
+        }
+
+        /* Floating WhatsApp */
+        .float-whatsapp {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: #25d366;
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            text-decoration: none;
+            z-index: 1000;
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+    </style>
 </head>
-
 <body>
 
-<nav>
-<div class="logo">Keluarga Cemara</div>
-<div>
-<a href="#tentang">Tentang</a>
-<a href="#progress">Progress</a>
-<a href="#lokasi">Lokasi</a>
-</div>
-</nav>
+    <!-- Header -->
+    <header>
+        <nav>
+            <div class="logo">🌲 Keluarga Cemara Residence</div>
+            <ul class="nav-links">
+                <li><a href="#home">Beranda</a></li>
+                <li><a href="#features">Fasilitas</a></li>
+                <li><a href="#location">Lokasi</a></li>
+                <li><a href="#promo">Promo</a></li>
+                <li><a href="#contact">Kontak</a></li>
+            </ul>
+        </nav>
+    </header>
 
-<!-- HERO -->
-<section class="hero">
-<div>
-<h1>Keluarga Cemara Residence</h1>
-<p>Hunian Modern Elegan di Desa Butu, Bone Bolango</p>
-<a href="https://wa.me/6289684247294" class="cta">Konsultasi Eksklusif</a>
-</div>
-</section>
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1>Keluarga Cemara Residence</h1>
+            <p>Hunian Nyaman & Strategis di Bone Bolango</p>
+            <p style="font-size: 1.2rem; margin-bottom: 2rem;">Belakang Kampus 4 UNG</p>
+            <a href="#contact" class="cta-button">📞 Hubungi Kami Sekarang</a>
+        </div>
+    </section>
 
-<!-- TENTANG -->
-<section id="tentang">
-<div class="content fade">
-<h2 class="gold">Visi & Komitmen</h2>
-<p style="margin-top:25px;color:#9ca3af;">
-Kami menghadirkan hunian yang tidak hanya nyaman,
-tetapi juga memiliki nilai investasi jangka panjang.
-Dikembangkan dengan standar kualitas dan perencanaan matang.
-</p>
-</div>
-</section>
+    <!-- Promo Banner -->
+    <div class="promo-banner">
+        🎉 PROMO TERBATAS: DP HANYA 1,5 JUTA + GRATIS BIAYA AKAD NOTARIS! 🎉
+    </div>
 
-<!-- PROGRESS -->
-<section id="progress">
-<h2 class="gold fade">Tampilan Dalam</h2>
+    <!-- Features Section -->
+    <section class="features" id="features">
+        <div class="container">
+            <h2 class="section-title">Mengapa Memilih Kami?</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🎓</div>
+                    <h3>Dekat Kampus UNG</h3>
+                    <p>Hanya berjalan kaki dari Kampus 4 Universitas Negeri Gorontalo. Ideal untuk mahasiswa & dosen.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🏘️</div>
+                    <h3>Lingkungan Keluarga</h3>
+                    <p>Area perumahan yang aman, nyaman, dan bersahabat untuk keluarga Anda.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🛣️</div>
+                    <h3>Akses Strategis</h3>
+                    <p>Jalan utama yang mudah dijangkau, dekat pusat kota & fasilitas umum.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🌳</div>
+                    <h3>Suasana Asri</h3>
+                    <p>Lingkungan hijau dengan udara segar dan suasana tenang.</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<div class="grid">
-<div class="card fade">
-<img src="progress1.jpg">
-<p>Halaman Depan</p>
-</div>
+    <!-- Location Section -->
+    <section class="location" id="location">
+        <div class="container">
+            <h2 class="section-title">Lokasi Strategis</h2>
+            <div class="location-content">
+                <div class="location-info">
+                    <h3>📍 Alamat Lengkap</h3>
+                    <p><strong>Desa Butu, Dusun 1</strong><br>
+                    Kecamatan Tilongkabila<br>
+                    Kabupaten Bone Bolango<br>
+                    Provinsi Gorontalo</p>
+                    
+                    <ul style="margin-top: 1.5rem;">
+                        <li>✅ Belakang Kampus 4 UNG</li>
+                        <li>✅ Akses jalan utama</li>
+                        <li>✅ Dekat pusat perbelanjaan</li>
+                        <li>✅ Akses transportasi umum</li>
+                        <li>✅ Lingkungan kampus yang dinamis</li>
+                    </ul>
+                </div>
+                <div class="location-map">
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.1234567890123!2d123.12345678901234!3d0.12345678901234567!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMMKwMDcnMjQuNCJOIDEyM8KwMDcnMjQuNCJF!5e0!3m2!1sen!2sid!4v1234567890123!5m2!1sen!2sid" 
+                        width="100%" 
+                        height="100%" 
+                        style="border:0; border-radius: 15px;" 
+                        allowfullscreen="" 
+                        loading="lazy">
+                    </iframe>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<div class="card fade">
-<img src="progress2.jpg">
-<p>Ruang Tengah</p>
-</div>
+    <!-- Promo Details -->
+    <section class="promo-details" id="promo">
+        <div class="container">
+            <h2 class="section-title" style="color: white;">Promo Spesial Bulan Ini</h2>
+            <div class="promo-grid">
+                <div class="promo-card">
+                    <h3>💰 DP Super Ringan</h3>
+                    <div class="promo-price">Rp 1,5 Juta</div>
+                    <p>Mulai kepemilikan rumah impian Anda dengan uang muka yang sangat terjangkau. Tidak perlu menunggu lama untuk mengumpulkan DP besar!</p>
+                </div>
+                <div class="promo-card">
+                    <h3>🎁 Gratis Biaya Akad</h3>
+                    <div class="promo-price">Rp 0</div>
+                    <p>Bebas biaya akad notaris dan legalitas. Kami tangani semua proses administrasi Anda tanpa biaya tambahan. Transparan & terpercaya!</p>
+                </div>
+                <div class="promo-card">
+                    <h3>⏰ Terbatas!</h3>
+                    <div class="promo-price">5 Unit</div>
+                    <p>Promo hanya berlaku untuk 5 unit pertama yang booking bulan ini. Jangan sampai kehabisan kesempatan emas ini!</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<div class="card fade">
-<img src="progress3.jpg">
-<p>Kamar Depan</p>
-</div>
+    <!-- Gallery Section -->
+    <section class="gallery" id="gallery">
+        <div class="container">
+            <h2 class="section-title">Galeri Properti</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=600" alt="Tampak Depan">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=600" alt="Ruang Tamu">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=600" alt="Kamar Tidur">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1600573472550-8090b5e0745e?w=600" alt="Dapur">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=600" alt="Lingkungan">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?w=600" alt="Fasilitas">
+                </div>
+            </div>
+        </div>
+    </section>
 
-<div class="card fade">
-<img src="progress4.jpg">
-<p>Kamar Belakang</p>
-</div>
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <h2 class="section-title">Hubungi Kami</h2>
+            <p style="text-align: center; font-size: 1.2rem; margin-bottom: 2rem;">
+                Tertarik dengan promo kami? Segera hubungi marketing kami untuk survey lokasi dan informasi lengkap!
+            </p>
+            <div class="contact-grid">
+                <div class="contact-card">
+                    <div class="contact-icon">📱</div>
+                    <h3>Telepon/WhatsApp</h3>
+                    <a href="tel:089684247294">0896-8424-7294</a>
+                    <p style="margin-top: 0.5rem; font-size: 0.9rem;">Marketing Keluarga Cemara</p>
+                </div>
+                <div class="contact-card">
+                    <div class="contact-icon">📧</div>
+                    <h3>Email</h3>
+                    <a href="mailto:kcr230226@gmail.com">kcr230226@gmail.com</a>
+                    <p style="margin-top: 0.5rem; font-size: 0.9rem;">Respon 1x24 jam</p>
+                </div>
+                <div class="contact-card">
+                    <div class="contact-icon">📘</div>
+                    <h3>Facebook</h3>
+                    <a href="https://facebook.com/KeluargaCemaraResidence" target="_blank">Keluarga Cemara Residence</a>
+                    <p style="margin-top: 0.5rem; font-size: 0.9rem;">Follow untuk update promo</p>
+                </div>
+                <div class="contact-card">
+                    <div class="contact-icon">📍</div>
+                    <h3>Alamat Kantor</h3>
+                    <p>Desa Butu, Dusun 1<br>Kec. Tilongkabila<br>Bone Bolango</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<div class="card fade">
-<img src="progress5.jpg">
-<p>Kamar Mandi</p>
-</div>
-</div>
-</section>
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Keluarga Cemara Residence. All Rights Reserved.</p>
+        <p>Desa Butu, Dusun 1, Kecamatan Tilongkabila, Kabupaten Bone Bolango</p>
+        <div class="social-links">
+            <a href="https://facebook.com/KeluargaCemaraResidence" target="_blank">📘</a>
+            <a href="https://wa.me/6289684247294" target="_blank">💬</a>
+            <a href="mailto:kcr230226@gmail.com">📧</a>
+        </div>
+    </footer>
 
-<!-- LOKASI -->
-<section id="lokasi">
-<h2 class="gold fade">Lokasi Strategis</h2>
-<p style="color:#9ca3af;margin-top:20px;" class="fade">
-Belakang Kampus 4 Bone Bolango, Desa Butu
-</p>
-
-<iframe class="map fade"
-src="https://www.google.com/maps?q=Desa+Butu+Bone+Bolango&output=embed">
-</iframe>
-</section>
-
-<footer>
-© 2026 Keluarga Cemara Residence  
-Hubungi WhatsApp: 089684247294
-</footer>
-
-<a href="https://wa.me/6289684247294" class="wa">
-Chat WhatsApp
-</a>
-
-<script>
-const faders = document.querySelectorAll('.fade');
-window.addEventListener('scroll',()=>{
-faders.forEach(el=>{
-if(el.getBoundingClientRect().top < window.innerHeight - 120){
-el.classList.add('show');
-}
-});
-});
-</script>
+    <!-- Floating WhatsApp -->
+    <a href="https://wa.me/6289684247294?text=Halo%20Keluarga%20Cemara%20Residence,%20saya%20tertarik%20dengan%20promo%20DP%201,5jt.%20Bisa%20info%20lengkapnya?" 
+       class="float-whatsapp" 
+       target="_blank" 
+       title="Chat WhatsApp">
+        💬
+    </a>
 
 </body>
 </html>
